@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ItemCustomizationComponent } from './item-customization/item-customization.component';
 import { ItemComponent } from './item/item.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemCustomizationComponent,
-    ItemComponent
+    ItemComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule

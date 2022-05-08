@@ -1,10 +1,18 @@
 export const ITEMS: any = [
     {
-        name: 'pizza',
-        price: '$10.00',
+        name: 'Pizza',
+        price: 0
     },
     {
-        name: 'soda',
-        price: '$5.00',
+        name: 'Wings/Slides',
+        price: 0
+    },
+    {
+        name: 'Pasta',
+        price: 0
+    },
+    {
+        name: 'Drinks',
+        price: 0
     }
 ]
