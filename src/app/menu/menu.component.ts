@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from '../item.service';
 import { Item } from './../item';
 import { ITEMS } from './../items'
 
@@ -10,7 +11,11 @@ import { ITEMS } from './../items'
 export class MenuComponent implements OnInit {
   items: Item[] = ITEMS;
 
-  constructor() { }
+  constructor(private itemSer: ItemService) { }
+
+  itemSelect(item: Item): void {
+    this.itemSer.onSelect.emit(item);
+  }
 
   ngOnInit(): void {
   }
