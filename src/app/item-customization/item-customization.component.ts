@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { formatCurrency } from '@angular/common';
+import { Component, OnInit} from '@angular/core';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
 import { ITEMS } from './../items'
@@ -19,7 +20,7 @@ export class ItemCustomizationComponent implements OnInit {
   constructor(private itemSer: ItemService) { }
 
   addToOrder(): void {
-    
+    this.itemSer.addCart.emit({name: (this.size + ' ' + this.name), price: this.price});
   }
 
   changeSize(size: string): void {

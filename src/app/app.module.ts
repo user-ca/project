@@ -6,6 +6,7 @@ import { ItemCustomizationComponent } from './item-customization/item-customizat
 import { ItemComponent } from './item/item.component';
 import { MenuComponent } from './menu/menu.component';
 import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { CartComponent } from './cart/cart.component';
     ItemCustomizationComponent,
     ItemComponent,
     MenuComponent,
-    CartComponent
+    CartComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule

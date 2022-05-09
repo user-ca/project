@@ -1,1 +1,6 @@
 <h1>Cart</h1>
+<app-cart-item
+*ngFor="let itm of cartitems;"
+[cartitem]="itm"></app-cart-item>
+<hr>
+<p>Subtotal: ${{subotal}}</p>

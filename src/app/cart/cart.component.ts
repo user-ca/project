@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from '../item.service';
 
 @Component({
   selector: 'app-cart',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  cartitems: {name: string, price: number}[] = [];
+  
+  subotal: number = 0;
 
-  constructor() { }
+  constructor(private itemSer: ItemService) { }
 
   ngOnInit(): void {
+    this.itemSer.addCart.subscribe((data: {name: string, price: number}) => {
+      this.cartitems.push(data);
+      this.subotal += data.price;
+    })
   }
 
 }
