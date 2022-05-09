@@ -5,7 +5,6 @@ import { Item } from './item';
   providedIn: 'root'
 })
 export class ItemService {
-
   
   onSelect: EventEmitter<Item> = new EventEmitter<Item>();
 

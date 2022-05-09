@@ -1,4 +1,13 @@
 <h1>Item Customization</h1>
-<div class="card-body">
-    <p>{{name}}, ${{price}}.00</p>
+<div>
+    <p>{{name}}, ${{price}}, Size: {{size}}</p>
+    <p>
+        <button (click)="changeSize('XL')" class="btn btn-outline-secondary" style="width: 110px; margin-right:10px;">Extra Large</button>
+        <button (click)="changeSize('L')" class="btn btn-outline-secondary" style="width: 110px; margin-right:10px;">Large</button>
+        <button (click)="changeSize('M')" class="btn btn-outline-secondary" style="width: 110px; margin-right:10px;">Medium</button>
+        <button (click)="changeSize('S')" class="btn btn-outline-secondary" style="width: 110px; margin-right:10px;">Small</button>
+    </p>
+    <p>
+        <button (click)="addToOrder()" class="btn btn-secondary" style="width: 130px; margin-right:10px;">Add to Order</button>
+    </p>
 </div>
