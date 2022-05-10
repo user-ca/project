@@ -1,4 +1,5 @@
 export interface Item {
     name: string,
-    prices: number[],
+    prices: number[],   
+    preparation_time:number
 }

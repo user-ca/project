@@ -7,7 +7,8 @@ import { Item } from './../item';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  @Input() item: Item = {name: '', prices: []};
+
+  @Input() item: Item = {name: '', prices:[], preparation_time:0};
 
   constructor() { }
 
