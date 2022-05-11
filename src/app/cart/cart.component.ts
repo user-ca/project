@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../item.service';
+import { CheckoutService } from '../checkout.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,13 +13,16 @@ export class CartComponent implements OnInit {
   subotal: number = 0;
 
 
-  constructor(private itemSer: ItemService) { }
+  constructor(private itemSer: ItemService,private CheckoutSer: CheckoutService) { }
 
   ngOnInit(): void {
     this.itemSer.addCart.subscribe((data: {name: string, price: number}) => {
       this.cartitems.push(data);
       this.subotal += data.price;
     })
+  }
+  Checkout(){
+    this.CheckoutSer.Checkout('clicked');
   }
 
 }
