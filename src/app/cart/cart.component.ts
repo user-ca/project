@@ -8,8 +8,9 @@ import { ItemService } from '../item.service';
 })
 export class CartComponent implements OnInit {
   cartitems: {name: string, price: number}[] = [];
-  
+
   subotal: number = 0;
+
 
   constructor(private itemSer: ItemService) { }
 
