@@ -16,13 +16,12 @@ export class CartComponent implements OnInit {
 
   subotal: number = 0;
 
-<<<<<<< Updated upstream
-  constructor(public viewSer: ViewService, private itemSer: ItemService) { }
-=======
 
-  constructor(private itemSer: ItemService,private CheckoutSer: CheckoutService) { }
->>>>>>> Stashed changes
+  constructor(private itemSer: ItemService,private CheckoutSer: CheckoutService,private viewSer:ViewService) { }
 
+  showCheckout():void{
+    this.viewSer.showCheckout()
+  }
   ngOnInit(): void {
     this.itemSer.addCart.subscribe((data: {name: string, price: number,preparation_time:number}) => {
       this.cartitems.push(data);

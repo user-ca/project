@@ -1,1 +1,13 @@
 <h1>Your Order</h1>
+<table class="table">
+    <th>Your Items</th>
+    <tr *ngFor="let item of items">
+        {{item.name}}
+    </tr>
+    </table>
+<div class="order-confirm">
+    <table class="table">
+        <tr>Order Confirmation Number: {{orderConfirm}}</tr>
+        <tr>Your estimate wait time is: {{calcWaitTime()}}</tr>
+    </table>
+</div>
