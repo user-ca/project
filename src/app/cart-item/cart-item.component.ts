@@ -8,7 +8,7 @@ import { Item } from './../item';
 })
 export class CartItemComponent implements OnInit {
   
-  @Input() cartitem: {name: string, price: number} = {name: '', price: 0};
+  @Input() cartitem: Item = new Item('',[0],0);
 
   constructor() { }
 

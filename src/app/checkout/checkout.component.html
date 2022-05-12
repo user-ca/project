@@ -3,15 +3,14 @@
 <div class="cart">
     <div class="container">
     <table class="table" >
-        <th>Items in cart </th>
-        
+        <th>Items in cart </th>        
         <tr *ngFor="let item of items;">
             
             <td>
                 {{item.name}}
             </td>
             <td>
-                ${{item.price}}
+                ${{item.prices[0]}}
             </td>
         </tr>
 
@@ -28,7 +27,7 @@
         </select>
     </div>
     <div>
-        <button  class="btn btn-secondary">Submit Payment</button>
+        <button  class="btn btn-secondary" (click)="completeCheckout()">Submit Payment</button>
     </div>
     <div class="container">
         <input type="checkbox" id="check" >

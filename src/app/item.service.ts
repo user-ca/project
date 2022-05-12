@@ -7,9 +7,15 @@ import { Item } from './item';
 export class ItemService {
 
   onSelect: EventEmitter<Item> = new EventEmitter<Item>();
-  addCart: EventEmitter<{name: string, price: number,preparation_time:number}> = new EventEmitter<{name: string, price: number,preparation_time:number}>();
+  addCart: EventEmitter<Item> = new EventEmitter<Item>();
+  items:Item[]=[]
+  
 
-
-  constructor() { }
+  constructor() { 
+    this.addCart.subscribe((item:Item)=>{
+      this.items.push(item);  
+        
+    })
+  }
 
 }

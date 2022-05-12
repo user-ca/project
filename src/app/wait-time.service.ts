@@ -7,7 +7,7 @@ export class WaitTimeService {
 
   constructor() { }
 
-  getOrderWaitTime(items:{name:string,price:number,preparation_time:number}[]):number{
+  getOrderWaitTime(items:Item[]):number{
     let wait=0;
     for (let i=0;i<items.length;i++){
       wait+=items[i].preparation_time

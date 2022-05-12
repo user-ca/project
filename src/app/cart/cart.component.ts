@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../item.service';
 import { CheckoutService } from '../checkout.service';
 import { ViewService } from './../view.service';
+import { Item } from '../item';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +11,7 @@ import { ViewService } from './../view.service';
 })
 export class CartComponent implements OnInit {
 
-  cartitems: {name: string, price: number,preparation_time:number}[] = [];
+  cartitems: Item[] = [];
   
 
 
@@ -23,9 +24,9 @@ export class CartComponent implements OnInit {
     this.viewSer.showCheckout()
   }
   ngOnInit(): void {
-    this.itemSer.addCart.subscribe((data: {name: string, price: number,preparation_time:number}) => {
+    this.itemSer.addCart.subscribe((data: Item) => {
       this.cartitems.push(data);
-      this.subotal += data.price;
+      this.subotal += data.prices[0];
     })
   }
   Checkout(){

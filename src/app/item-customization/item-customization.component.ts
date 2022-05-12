@@ -21,29 +21,29 @@ export class ItemCustomizationComponent implements OnInit {
   constructor(private itemSer: ItemService) { }
 
   addToOrder(): void {
-    this.itemSer.addCart.emit({name: (this.size + ' ' + this.name), price: this.price,preparation_time:this.prep_time});
+    this.itemSer.addCart.emit({name: (this.size + ' ' + this.name), prices: [this.price],preparation_time:this.prep_time});
   }
 
   changeSize(size: string): void {
     if(size == 'XL')
     {
       this.size = "Extra Large";
-      this.price = ITEMS.find((e: { name: string; }) => e.name === this.name).prices[0];
+      this.price = ITEMS[this.name].prices[0];
     }
     if(size == 'L')
     {
       this.size = "Large";
-      this.price = ITEMS.find((e: { name: string; }) => e.name === this.name).prices[1];
+      this.price = ITEMS[this.name].prices[1];
     }
     if(size == 'M')
     {
       this.size = "Medium";
-      this.price = ITEMS.find((e: { name: string; }) => e.name === this.name).prices[2];
+      this.price = ITEMS[this.name].prices[2];
     }
     if(size == 'S')
     {
       this.size = "Small";
-      this.price = ITEMS.find((e: { name: string; }) => e.name === this.name).prices[3];
+      this.price = ITEMS[this.name].prices[3];
     }
   }
 
