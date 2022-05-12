@@ -1,6 +1,8 @@
+
 <h1>Checkout</h1>
 <div class="cart">
-    <table class="items_in_cart" >
+    <div class="container">
+    <table class="table" >
         <th>Items in cart </th>
         
         <tr *ngFor="let item of items;">
@@ -8,7 +10,7 @@
             <td>
                 {{item.name}}
             </td>
-            <td class="right">
+            <td>
                 ${{item.price}}
             </td>
         </tr>
@@ -17,7 +19,8 @@
     <div class="totalTag">
         <p>Total Price: ${{price_sum}}</p>
     </div>
-    <div class="paymentMethod">
+    </div>
+    <div class="paymentMethod container">
         <select class="payment">
             <option *ngFor="let method of paymentMethod">
                 {{method}}
@@ -27,4 +30,11 @@
     <div>
         <button  class="btn btn-secondary">Submit Payment</button>
     </div>
+    <div class="container">
+        <input type="checkbox" id="check" >
+        <label for="check">Text Reminder</label>
+        <br>
+        <input type="text" placeholder="Phone Number" [(ngModel)]="phone_num"> 
+    </div>
 </div>
+

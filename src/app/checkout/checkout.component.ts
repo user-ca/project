@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ItemService } from '../item.service';
+
+
+import { CheckoutService } from '../checkout.service';
 
 @Component({
   selector: 'app-checkout',
@@ -7,9 +11,11 @@ import { ItemService } from '../item.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
+
   items:{name:string,price:number,preparation_time:number}[]=[]
-  constructor(private itemSer:ItemService ) { }
+  constructor(private itemSer:ItemService,private checkSer:CheckoutService ) { }
   price_sum=0
+  phone_num:string=''
   paymentMethod:string[]=[
     "Visa",
     "Master Card",
@@ -27,5 +33,6 @@ export class CheckoutComponent implements OnInit {
     })
   }
   
+
 
 }
