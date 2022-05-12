@@ -17,8 +17,6 @@ export class CheckoutComponent implements OnInit {
     "Paypal",
     "Cash"
   ]
-    
-  
 
 
   

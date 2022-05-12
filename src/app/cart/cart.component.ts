@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../item.service';
 import { CheckoutService } from '../checkout.service';
+import { ViewService } from './../view.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +13,7 @@ export class CartComponent implements OnInit {
   
   subotal: number = 0;
 
-  constructor(private itemSer: ItemService) { }
+  constructor(public viewSer: ViewService, private itemSer: ItemService) { }
 
   ngOnInit(): void {
     this.itemSer.addCart.subscribe((data: {name: string, price: number,preparation_time:number}) => {
