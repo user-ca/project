@@ -5,11 +5,11 @@ import { Item } from './item';
   providedIn: 'root'
 })
 export class ItemService {
-  
+
   onSelect: EventEmitter<Item> = new EventEmitter<Item>();
-  addCart: EventEmitter<{name: string, price: number}> = new EventEmitter<{name: string, price: number}>();
+  addCart: EventEmitter<{name: string, price: number,preparation_time:number}> = new EventEmitter<{name: string, price: number,preparation_time:number}>();
 
 
   constructor() { }
-  
+
 }

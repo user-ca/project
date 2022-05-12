@@ -14,13 +14,14 @@ export class ItemCustomizationComponent implements OnInit {
 
   name: string = 'Pizza';
   price: number = 5.00;
+  prep_time:number=3.00;
 
   size: string = 'Medium';
 
   constructor(private itemSer: ItemService) { }
 
   addToOrder(): void {
-    this.itemSer.addCart.emit({name: (this.size + ' ' + this.name), price: this.price});
+    this.itemSer.addCart.emit({name: (this.size + ' ' + this.name), price: this.price,preparation_time:this.prep_time});
   }
 
   changeSize(size: string): void {
